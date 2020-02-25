@@ -18,7 +18,7 @@ int main() {
 
     for(t=0; t < NUM_THREADS; t++) {
         printf("creating thread %ld\n",t);
-        rc =  pthread_create(&threads[t], NULL, PrintHello, (void *) &t);
+        rc =  pthread_create(&threads[t], NULL, PrintHello, (void *) t);
         if (rc) {
             printf("ERROR: return code from pthread_create() is %d\n",rc);
             exit(-1);
